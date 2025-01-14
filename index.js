@@ -4,3 +4,10 @@ const addNumToSheet = document.querySelector("form");
 const numberInput = document.querySelector('input[name="number"]');
 const sortOneButton = document.querySelector("#sortOne");
 const sortAllButton = document.querySelector("#sortAll");
+
+//state
+const state = {
+  numBank: [],
+  odds: [],
+  evens: [],
+};
