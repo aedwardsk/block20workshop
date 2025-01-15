@@ -25,15 +25,33 @@ function sortOne() {
       state.odds.push(state.numBank[i]);
     }
   }
-
+  state.numBank = [];
   render();
 }
 const sortOneButton = document.querySelector("#sortOne");
 sortOneButton.addEventListener("click", sortOne);
 const sortAllButton = document.querySelector("#sortAll");
+sortAllButton.addEventListener("click", sortAll);
+
 //TODO need to write store function for the sort all odd and even.
+function storingSortAllNum() {
+  state.evens = [];
+  state.odds = [];
+
+  for (let i = 0; i < state.numBank.length; i++) {
+    if (state.numBank[i] % 2 === 0) {
+      state.evens.push(state.numBank[i]);
+    } else {
+      state.odds.push(state.numBank[i]);
+    }
+  }
+}
 //TODO need to write sort all function.
-function sortAll() {}
+function sortAll() {
+  storingSortAllNum();
+  state.numBank = [];
+  render();
+}
 //TODO nee to make click events for both sorts
 
 //function complete for adding numbers to the form
