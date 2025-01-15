@@ -18,13 +18,22 @@ function render() {
 
 //TODO need to write sort one function.
 function sortOne() {
-  const sortOneButton = document.querySelector("#sortOne");
+  for (let i = 0; i < state.numBank.length; i++) {
+    if (state.numBank[i] % 2 === 0) {
+      state.evens.push(state.numBank[i]);
+    } else {
+      state.odds.push(state.numBank[i]);
+    }
+  }
+
+  render();
 }
+const sortOneButton = document.querySelector("#sortOne");
+sortOneButton.addEventListener("click", sortOne);
+const sortAllButton = document.querySelector("#sortAll");
 //TODO need to write store function for the sort all odd and even.
 //TODO need to write sort all function.
-function sortAll() {
-  const sortAllButton = document.querySelector("#sortAll");
-}
+function sortAll() {}
 //TODO nee to make click events for both sorts
 
 //function complete for adding numbers to the form
@@ -44,4 +53,5 @@ addNumToSheet.addEventListener("submit", (event) => {
   render();
   numberInput.value = "";
 });
+
 //TODO
